@@ -1,5 +1,7 @@
 #include "mainproject.h"
-
+MainProject::MainProject() : m_sender(new Sender())
+{
+}
 void MainProject::searchPlugin()
 {
     QStringList listFiles;
@@ -26,6 +28,10 @@ void MainProject::searchPlugin()
 
 void MainProject::usePlugin()
 {
+    emit test(1101);
     QString teststring = "asdlabs";
     qDebug() << plugin->getUpString(teststring);
+    m_sender->start();
+    plugin->start();
+    QObject::connect(plugin, &Interface::dataReceived, this, &MainProject::test);
 }

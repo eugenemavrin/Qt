@@ -23,6 +23,10 @@ CppApplication {
         "mainproject.cpp",
         "mainproject.h",
         "interface.h",
+        "printdata.cpp",
+        "printdata.h",
+        "sender.cpp",
+        "sender.h",
     ]
 
     Group {     // Properties for the produced executable
